@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+
+{% block title %}Reports{% endblock %}
+
+{% block content %}
+    <h1>Reports</h1>
+    {% if has_reports_edit_perm %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Report</button>
+        </form>
+    {% endif %}
+    <h2>Submitted Reports</h2>
+    <ul>
+        {% for report in reports %}
+            <li>{{ report.report_name }} by {{ report.created_by }} on {{ report.created_at }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

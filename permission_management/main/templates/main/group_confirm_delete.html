@@ -1,0 +1,16 @@
+<!-- core/templates/core/group_confirm_delete.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Group</title>
+</head>
+<body>
+    <h1>Delete Group</h1>
+    <p>Are you sure you want to delete this group?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'group_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

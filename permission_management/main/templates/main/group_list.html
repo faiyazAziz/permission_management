@@ -1,0 +1,27 @@
+<!-- core/templates/core/group_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group List</title>
+</head>
+<body>
+    <h1>Group List</h1>
+    <a href="{% url 'group_add' %}">Add Group</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        {% for group in groups %}
+        <tr>
+            <td>{{ group.name }}</td>
+            <td>
+                <a href="{% url 'group_edit' group.pk %}">Edit</a>
+                <a href="{% url 'group_delete' group.pk %}">Delete</a>
+                <a href="{% url 'group_permissions' group.pk %}">Permissions</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

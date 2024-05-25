@@ -1,0 +1,16 @@
+<!-- core/templates/core/user_permissions_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Permissions</title>
+</head>
+<body>
+    <h1>Update Permissions for {{ object.username }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'user_list' %}">Back to list</a>
+</body>
+</html>

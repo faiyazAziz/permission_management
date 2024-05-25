@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+    <div style="display:flex;flex-direction:row-reverse;gap:10px">
+        <a href="{% url 'user_list' %}" title="Can be accessed by Admin Only !">Users</a>
+        <a href="{% url 'group_list' %}" title="Can be accessed by Admin Only !">Groups</a>
+        <a href="{% url 'audit_log_list' %}" title="Can be accessed by Admin Only !">Audit Logs</a>
+    </div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- core/templates/core/group_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Form</title>
+</head>
+<body>
+    <h1>{{ view.object.pk|default:"Add" }} Group</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'group_list' %}">Back to list</a>
+</body>
+</html>
